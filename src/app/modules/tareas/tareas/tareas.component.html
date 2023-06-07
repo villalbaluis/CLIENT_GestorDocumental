@@ -1,0 +1,38 @@
+<h1 class="text-center mb-2">Tareas realizables</h1>
+<table class="table align-middle mb-0 mt-3 bg-white">
+    <thead class="bg-light">
+        <tr>
+            <th>Información</th>
+            <th>Fechas</th>
+            <th>Dificultad</th>
+            <th>Porcentajes</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarea of tareaSeteadas">
+            <td>
+                <div class="d-flex align-items-center">
+                    <h3 style="width: 45px; height: 45px" class="rounded-circle">{{ tarea.idTarea }}</h3>
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">Estado: {{ tarea.idEstado }}</p>
+                        <p class="text-muted mb-0">{{ tarea.nombreTarea }}</p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">Inicio: {{ tarea.fechaInicioTarea }}</p>
+                <p class="text-muted mb-0">Fin: {{ tarea.fechaFinTarea }}</p>
+            </td>
+            <td>
+                <span class="badge badge-success rounded-pill d-inline text-black-50">{{ tarea.dificultad }}</span>
+            </td>
+            <td>{{ tarea.porcentajeCumplimiento }}</td>
+            <td>
+                <button type="button" class="btn btn-link btn-sm btn-rounded" (click)="verTarea(tarea.idTarea)">
+                    Ver tarea
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

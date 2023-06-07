@@ -1,0 +1,114 @@
+<div *ngIf="userData">
+    <div class="container rounded bg-white  mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="../../../assets/img/profile.png">
+                    <span class="font-weight-bold">{{ userData?.nombreEmpleado }}</span>
+                    <span class="text-black-50">{{ userData?.correo }}</span>
+                    <span class="font-weight-bold mt-4">Jefe inmediato</span>
+                    <span class="text-black-50">{{ userData?.jefeinmediato }}</span>
+                    <span class="font-weight-bold">Área de trabajo</span>
+                    <span class="text-black-50">{{ userData?.nombreArea }}</span>
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <form (ngSubmit)="updateEmpleado()">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Perfil del empleado</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-12">
+                                <label class="labels">Nombre del empleado</label>
+                                <input type="text" class="form-control" placeholder="{{ userData?.nombreEmpleado  }}"
+                                    name="nombreEmpleado" [(ngModel)]="fieldsUpdateEmpleado.nombreEmpleado">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <label class="labels">Número de documento: </label>
+                                <input type="text" class="form-control" placeholder="Ingresa tu número de documento"
+                                    value="{{ userData?.cedulaEmpleado  }}" disabled>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Correo del empleado: </label>
+                                <input type="text" class="form-control" placeholder="{{ userData?.correo  }}"
+                                    name="correo" [(ngModel)]="fieldsUpdateEmpleado.correo">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Rol del empleado: </label>
+                                <input type="text" class="form-control" placeholder="Ingresa tu correo coorporativo"
+                                    value="{{ userData?.rol  }}" disabled>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Username del empleado </label>
+                                <input type="text" class="form-control" placeholder="Ingresa tu correo coorporativo"
+                                    value="{{ userData?.username  }}" disabled>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6"><label class="labels">Dirección del empleado</label>
+                                <input type="text" class="form-control" placeholder="{{ userData?.direccionEmpleado  }}"
+                                name="direccionEmpleado" [(ngModel)]="fieldsUpdateEmpleado.direccionEmpleado">
+                            </div>
+                            <div class="col-md-6"><label class="labels">Telefono del empleado</label>
+                                <input type="text" class="form-control" placeholder="{{ userData?.telefonoEmpleado  }}"
+                                 name="telefonoEmpleado" [(ngModel)]="fieldsUpdateEmpleado.telefonoEmpleado">
+                            </div>
+                        </div>
+                        <input type="hidden" name="idEmpleado" [(ngModel)]="fieldsUpdateEmpleado.idEmpleado">
+                        <div class="mt-5 text-center">
+                            <button class="btn btn-primary profile-button" type="submit" name="submit">Guardar
+                                cambios</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience">
+                        <span>Panel de gestión</span>
+                        <button class="border px-3 p-1 add-experience" (click)="redirectToTareas()">Modulo de
+                            tareas</button>
+                    </div>
+                    <br>
+                    <div *ngIf="esJefe">
+                        <div class="col-md-12">
+                            <label class="labels">Crear nuevo empleado</label>
+                            <br>
+                            <button class="btn btn-primary profile-button" type="button">Nuevo Empleado</button>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <label class="labels">Listar empleados</label>
+                            <br>
+                            <button class="btn btn-primary profile-button" type="button">Empleados</button>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <label class="labels">Crear nueva área</label>
+                            <br>
+                            <button class="btn btn-primary profile-button" type="button">Creación de área</button>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <label class="labels">Crear nuevo objetivo</label>
+                            <br>
+                            <button class="btn btn-primary profile-button" type="button">Creación objetivo</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-5">
+                        <label class="labels">¿Terminaste? Cerrar sesión</label>
+                        <br>
+                        <button class="btn btn-danger" type="button" (click)="logout()">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!userData">
+    <h1>Ocurrió un error iniciando sesión.</h1>
+</div>

@@ -1,0 +1,31 @@
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+.img-md {
+    width: 4rem;
+    height: 4rem;
+}
+.btn-link {
+    transition-property: color,background-color;
+    box-shadow: none;
+    border-radius: 0;
+    text-decoration: none!important;
+}
+
+.nombre-area{
+    color: #000000;
+}
+
+.btn-areas {
+    background-color: #9f07e6;
+    color: #fff;
+    width: 180px !important;
+    height: 40px !important;
+    font-size: medium;
+}
+
+.btn-areas:hover {
+    background-color: #fff;
+    color: #9f07e6;
+    border: 2px solid #9f07e6;
+}

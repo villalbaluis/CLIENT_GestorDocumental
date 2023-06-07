@@ -1,0 +1,30 @@
+#login .container #login-row #login-column #login-box {
+    margin-top: 20px;
+    max-width: 600px;
+    height: 320px;
+    border: 0.5px solid #e0e0e0;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+.title-login{
+    color: rgb(89, 89, 89) !important;
+    text-decoration: underline;
+}
+
+.btn-login {
+    background-color: #9f07e6 !important;
+    border-color: azure;
+    color: aliceblue;
+}
+
+.label-login {
+    color: #9f07e6 !important;
+}

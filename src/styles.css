@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container .card .navbar .navbar-brand {
+    color: #9f07e6;
+    font-weight: 600;
+}
+
+.card {
+    border: none !important;
+}
+
+.container .card .navbar .container-fluid form .btn.btn-primary {
+    text-transform: capitalize;
+    width: 100px;
+    background-color: transparent;
+    color: #9f07e6;
+    font-weight: 600;
+    border: 2px solid #9f07e6;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 20px;
+    transition: .5s;
+}
+
+.container .card .navbar .container-fluid form .btn.btn-primary:hover {
+    background-color: #9f07e6;
+    color: #fff;
+}
+
+.container .container-fluid ul li.nav-item .nav-link {
+    color: black;
+    font-size: 1rem;
+    border-bottom: 2px solid transparent;
+    padding: .5rem 0;
+    margin: 0 .8rem;
+}
+
+.container .container-fluid ul li.nav-item .nav-link:hover {
+    border-bottom: 2px solid #9f07e6;
+}
+
+.container .container-fluid ul li.nav-item .nav-link.active {
+    border-bottom: 2px solid #9f07e6;
+}
+
+.link-git {
+    text-decoration: none;
+    color: #9f07e6;
+}
+
+.link-git:hover {
+    text-decoration: none !important;
+    color: rgb(255, 255, 255) !important;
+}

@@ -1,0 +1,131 @@
+<ng-container *ngFor="let tarea of tareaSeteada">
+    <h3 class="text-black-50 text-center mt-5">Tarea: {{ tarea.titulo }}</h3>
+    <form mt-5>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="titulo">Titulo de la tarea</label>
+                    <input type="text" id="titulo" value="{{ tarea.titulo }}" class="form-control" name="nombreTarea" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="estado">Estado de la tarea</label>
+                    <input type="text" id="estado" value="{{ tarea.estado }}" class="form-control" name="estadoTarea" />
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="punto">Puntos de esfuerzo</label>
+                    <input type="number" min="1" max="8" id="punto" value="{{ tarea.puntos }}" class="form-control"
+                        name="puntosTarea" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="tiempo">Tiempo de duración estimado</label>
+                    <input type="text" id="tiempo" value="{{ tarea.duracion }}" class="form-control"
+                        name="puntosTarea" />
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="form-outline">
+                <label class="form-label" for="objetivo">Objetivo relacionado</label>
+                <input type="text" id="objetivo" value="{{ tarea.objetivo }}" class="form-control" disabled
+                    name="objetivoTarea" />
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="fechaInicio">Fecha de inicio de la tarea</label>
+                    <input type="text" id="fechaInicio" value="{{ tarea.inicio }}" class="form-control"
+                        name="fechaInicioTarea" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="fechaFin">Fecha estimada de finalización de la tarea</label>
+                    <input type="text" id="fechaFin" value="{{ tarea.fin }}" class="form-control"
+                        name="fechaFinTarea" />
+                </div>
+            </div>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="descripcion">Descripción detallada de la tarea</label>
+            <textarea class="form-control" id="descripcion" rows="4" value="{{ tarea.descripcion}}"
+                name="descripcionTarea"></textarea>
+        </div>
+
+        <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" id="form6Example8" />
+            <label class="form-check-label" for="form6Example8"> ¿La tarea ya está finalizada? </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-4 btn-actualizar-tarea">Actualizar Tarea</button>
+        <!-- <button (click)="verTarea(tarea.id)">Ver tarea</button> -->
+    </form>
+</ng-container>
+
+<!-- Aquí inicia las sección de la relación de empleados con la tarea -->
+<hr>
+<h3 class="text-black-50 text-center">Información de la tarea por empleado</h3>
+<ng-container *ngFor="let tarea of tareaEmpleado">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="empleado">
+                <div class="wrapper">
+                    <div class="header">{{ tarea.encargado }}</div>
+                    <div class="banner-img">
+                        <img src="../../../../assets/img/working.png" alt="Image 1">
+                    </div>
+
+                    <h4 class="text-center">Porcentajes</h4>
+                    <div class="porcentajes">
+                        <input type="text" class="form-control" placeholder="avanceJefe" aria-label="avanceJefe"
+                            placeholder="Jefe: {{ tarea.avancejefe }}%" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="porcentajes">
+                        <input type="text" class="form-control" placeholder="avanceJefe" aria-label="avanceJefe"
+                            placeholder="Jefe: {{ tarea.avancempleado }}%" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="footer">
+                        <a href="#" class="Cbtn Cbtn-danger">Modificar %</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- Aquí inicia la sección de las evidencias de cada tarea -->
+<hr>
+<h3 class="text-black-50 text-center">Evidencias de la tarea por empleado</h3>
+<section class="team">
+    <div class="grid-xlarge">
+        <div class="team__container">
+            <ng-container *ngFor="let evidencia of tareaEvidencia">
+                <article>
+                    <a class="team__link" href="#" target="_blank">
+                        <div class="team__img-container">
+                            <span class="preloader"></span>
+                            <figure class="team__img">
+                                <!-- <img class="absolute-bg" src="{{ evidencia.ruta }}" alt="{{ evidencia.ruta }}" /> -->
+                                <img class="absolute-bg" src="../../../../assets/img/agile method-amico.png"
+                                    alt="{{ evidencia.ruta }}" />
+                            </figure>
+                        </div>
+                        <div class="team__text">
+                            <h3 class="team__title">{{ evidencia.evidenciaempleado }}</h3>
+                            <span class="team__position">{{ evidencia.evidencia }}</span>
+                        </div>
+                    </a>
+                </article>
+            </ng-container>
+        </div>
+    </div>
+</section>

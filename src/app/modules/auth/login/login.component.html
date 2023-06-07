@@ -1,0 +1,24 @@
+<div id="login">
+  <div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+      <div id="login-column" class="col-md-6">
+        <div id="login-box" class="col-md-12">
+          <form id="login-form" class="form" (ngSubmit)="login()">
+            <h3 class="text-center text-info title-login">Iniciar Sesión</h3>
+            <div class="form-group">
+              <label for="userName" class="text-info label-login">Nombre de usuario o correo:</label><br>
+              <input type="text" name="userName" id="userName" class="form-control" [(ngModel)]="loginData.user">
+            </div>
+            <div class="form-group mt-4">
+              <label for="passUser" class="text-info label-login">Contraseña:</label><br>
+              <input type="password" name="passUser" id="passUser" class="form-control" [(ngModel)]="loginData.pass">
+            </div>
+            <div class="form-group mt-3 text-center">
+              <input type="submit" name="submit" class="btn btn-lg btn-info btn-login" value="Iniciar sesión">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
